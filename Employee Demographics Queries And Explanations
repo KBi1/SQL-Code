@@ -1,0 +1,86 @@
+/***********************************************************************************************
+ * SQL Queries for Employee_Demographics Table
+ * Includes examples for SELECT, TOP, LIMIT, DISTINCT, and COUNT clauses
+ ***********************************************************************************************/
+
+   --- Query 1: Retrieve all columns and rows from the Employee_Demographics table.
+   --- Use this query for full-table data extraction.
+
+SELECT * 
+FROM Employee_Demographics;
+
+
+
+   --- Query 2: Retrieve the top 5 rows from the Employee_Demographics table.
+   --- a) SQL Server syntax (uses "TOP").
+
+SELECT TOP 5 * 
+FROM Employee_Demographics;
+
+
+  --- b) Alternative Syntax for MySQL, PostgreSQL, or SQLite:
+  --- Uses the "LIMIT" clause to retrieve the top 5 rows.
+
+SELECT * 
+FROM Employee_Demographics
+LIMIT 5;
+
+
+  --- Query 3: Retrieve only the First_Name and Age columns from the Employee_Demographics table.
+  --- Use this query when you want to extract targeted columns, reducing unnecessary data transfer.
+
+SELECT First_Name, Age 
+FROM Employee_Demographics;
+
+
+
+  ---  Query 4: Retrieve distinct Employee_IDs from the Employee_Demographics table.
+  --- The DISTINCT keyword ensures that only unique Employee_ID values are returned, removing any duplicate entries.
+
+SELECT DISTINCT Employee_ID
+FROM Employee_Demographics;
+
+
+
+   --- Query 5: Count the number of non-null Last_Name values from the Employee_Demographics table.
+   --- This returns the total number of entries where Last_Name is not NULL.
+
+SELECT COUNT(Last_Name) 
+FROM Employee_Demographics;
+
+
+
+  --- Query 6: Count the number of non-null Last_Name values and alias the result as LastNameCount.
+  --- This query gives the same result as Query 5 but labels the output for clarity.
+
+SELECT COUNT(Last_Name) AS LastNameCount
+FROM Employee_Demographics;
+
+
+/*********************************************************************************************
+                                     Explanation of Queries
+ *********************************************************************************************
+   1. Query 1:
+      - Retrieves all columns and rows from the Employee_Demographics table.
+      - Use this query when you need to extract the full dataset.
+
+   2. Query 2:
+      - Retrieves only the top 5 rows from the Employee_Demographics table.
+      - SQL Server syntax uses "TOP".
+      - MySQL, PostgreSQL, and SQLite use "LIMIT" for the same purpose.
+
+   3. Query 3:
+      - Retrieves specific columns (First_Name and Age) from the table.
+      - Use this to narrow down your query and extract only the relevant data.
+
+   4. Query 4:
+      - Retrieves distinct Employee_IDs, ensuring that only unique values are returned.
+      - This eliminates duplicate Employee_ID entries from the result set.
+
+   5. Query 5:
+      - Counts the number of non-null `Last_Name` values in the `Employee_Demographics` table.
+      - This gives you the total count of employees who have a `Last_Name` entry.
+
+   6. Query 6:
+      - Similar to Query 5, but it aliases the result as `LastNameCount` for clearer output labeling.
+ ***********************************************************************************************/
