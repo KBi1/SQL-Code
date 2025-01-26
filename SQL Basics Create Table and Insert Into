@@ -1,0 +1,61 @@
+-- Table Creation: Employee Demographics
+CREATE TABLE Employee_Demographics (
+    Employee_ID INT, 
+    First_Name VARCHAR(50), 
+    Last_Name VARCHAR(50), 
+    Age INT, 
+    Gender VARCHAR(10)
+);
+
+-- Table Creation: Employee Job and Salary Details
+CREATE TABLE Employee_Salary_Details (
+    Employee_ID INT, 
+    Job_Title VARCHAR(50), 
+    Salary DECIMAL(10, 2)
+);
+
+-- Insert Data: Employee Demographics
+INSERT INTO Employee_Demographics VALUES
+(1001, 'Jim', 'Halpert', 30, 'Male'),
+(1002, 'Pam', 'Beasley', 30, 'Female'),
+(1003, 'Dwight', 'Schrute', 29, 'Male'),
+(1004, 'Angela', 'Martin', 31, 'Female'),
+(1005, 'Toby', 'Flenderson', 32, 'Male'),
+(1006, 'Michael', 'Scott', 35, 'Male'),
+(1007, 'Meredith', 'Palmer', 32, 'Female'),
+(1008, 'Stanley', 'Hudson', 38, 'Male'),
+(1009, 'Kevin', 'Malone', 31, 'Male'),
+(1010, 'Andy', 'Bernard', 34, 'Male'),
+(1011, 'Kelly', 'Kapoor', 27, 'Female'),
+(1012, 'Ryan', 'Howard', 28, 'Male'),
+(1013, 'Oscar', 'Martinez', 33, 'Male'),
+(1014, 'Phyllis', 'Vance', 40, 'Female'),
+(1015, 'Darryl', 'Philbin', 36, 'Male'),
+(1016, 'Erin', 'Hannon', 25, 'Female'),
+(1017, 'Holly', 'Flax', 34, 'Female'),
+(1018, 'Jan', 'Levinson', 39, 'Female'),
+(1019, 'Clark', 'Green', 30, 'Male'),
+(1020, 'Pete', 'Miller', 29, 'Male');
+
+-- Insert Data: Employee Job and Salary Details
+INSERT INTO Employee_Salary_Details VALUES
+(1001, 'Salesman', 45000.00),
+(1002, 'Receptionist', 36000.00),
+(1003, 'Salesman', 63000.00),
+(1004, 'Accountant', 47000.00),
+(1005, 'HR Specialist', 50000.00),
+(1006, 'Regional Manager', 65000.00),
+(1007, 'Supplier Relations', 41000.00),
+(1008, 'Salesman', 48000.00),
+(1009, 'Accountant', 42000.00),
+(1010, 'Salesman', 46000.00),
+(1011, 'Customer Relations', 39000.00),
+(1012, 'Intern', 28000.00),
+(1013, 'Accountant', 53000.00),
+(1014, 'Sales Support', 44000.00),
+(1015, 'Warehouse Manager', 52000.00),
+(1016, 'Receptionist', 35000.00),
+(1017, 'HR Manager', 60000.00),
+(1018, 'VP of Sales', 78000.00),
+(1019, 'Salesman', 47000.00),
+(1020, 'Salesman', 49000.00);
