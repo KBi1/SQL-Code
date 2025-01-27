@@ -1,0 +1,30 @@
+
+/***********************************************************************************************
+ * SQL Queries for Employee Salary Statistics
+ * Includes examples for SELECT, AVG, MIN, MAX functions to get salary-related statistics
+ ***********************************************************************************************/
+
+  -- Query 1: Calculate Average Salary
+  -- This query calculates the average salary across all employees
+
+SELECT avg(Salary) AS average_salary
+FROM employee_salary_details;
+
+  -- Query 2: Find Minimum Salary
+  -- This query retrieves the lowest salary in the employee salary details table
+
+SELECT min(Salary) AS min_salary
+FROM employee_salary_details;
+
+  -- Query 3: Find Maximum Salary
+  -- This query retrieves the highest salary in the employee salary details table
+
+SELECT max(Salary) AS max_salary
+FROM employee_salary_details;
+
+
+  -- Query 4: Get Max, Avg, and Min Salary in a Single Query
+  -- This query retrieves the maximum, average, and minimum salary in a single row
+
+SELECT max(Salary) AS Max_Value, avg(Salary) AS Avg_Value, min(Salary) AS Min_Value
+FROM employee_salary_details;
