@@ -28,3 +28,5 @@ FROM employee_salary_details;
 
 SELECT max(Salary) AS Max_Value, avg(Salary) AS Avg_Value, min(Salary) AS Min_Value
 FROM employee_salary_details;
+
+
