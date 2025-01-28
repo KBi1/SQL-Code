@@ -1,5 +1,4 @@
 # SQL-Code
-Got it! Here's the explanation using UK English.
 
 ### What is SQL in Simple Terms?
 
