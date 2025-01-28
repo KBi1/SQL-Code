@@ -1,0 +1,55 @@
+/***********************************************************************************************
+ * Employee Demographics Select Where Queries
+ * Includes examples for SELECT, WHERE clauses, GROUP BY, and COUNT to filter and group data by Gender and Age
+ ***********************************************************************************************/
+
+  -- Query 1: Count of Employees by Gender
+  -- This query counts the number of employees grouped by their gender
+SELECT Gender, COUNT(Gender)
+FROM employee_demographics
+GROUP BY Gender;
+
+  -- Query 2: Count of Employees by Gender and Age
+  -- This query counts the number of employees grouped by both gender and age
+SELECT Gender, age, COUNT(Gender)
+FROM employee_demographics
+GROUP BY Gender, age;
+
+  -- Query 3: Count of Employees by Gender and Age (Age > 30)
+  -- This query counts the number of employees whose age is greater than 30, grouped by gender and age
+SELECT Gender, age, COUNT(Gender)
+FROM employee_demographics
+WHERE age > 30
+GROUP BY Gender, age;
+
+  -- Query 4: Count of Employees by Gender and Age (Age > 30), Ordered by Count
+  -- This query counts the number of employees grouped by gender and age, and orders by the count in ascending order
+SELECT Gender, age, COUNT(Gender) AS CountGender
+FROM employee_demographics
+WHERE age > 30
+GROUP BY Gender, age
+ORDER BY CountGender;
+
+  -- Query 5: Count of Employees by Gender and Age (Age > 30), Ordered by Count in Ascending Order
+  -- This query counts the number of employees grouped by gender and age, and orders by the count in ascending order
+SELECT Gender, age, COUNT(Gender) AS CountGender
+FROM employee_demographics
+WHERE age > 30
+GROUP BY Gender, age
+ORDER BY CountGender ASC;
+
+  -- Query 6: Count of Employees by Gender and Age (Age > 30), Ordered by Count in Descending Order
+  -- This query counts the number of employees grouped by gender and age, and orders by the count in descending order
+SELECT Gender, age, COUNT(Gender) AS CountGender
+FROM employee_demographics
+WHERE age > 30
+GROUP BY Gender, age
+ORDER BY CountGender DESC;
+
+  -- Query 7: Count of Employees by Gender (Age > 31), Ordered by Count in Descending Order
+  -- This query counts the number of employees grouped by gender, for ages greater than 31, and orders by the count in descending order
+SELECT Gender, COUNT(Gender) AS CountGender
+FROM employee_demographics
+WHERE age > 31
+GROUP BY Gender
+ORDER BY CountGender DESC;
