@@ -1,8 +1,9 @@
 # SQL-Code
+Got it! Here's the explanation using UK English.
 
 ### What is SQL in Simple Terms?
 
-**SQL (Structured Query Language)** is a programming language used to manage and interact with databases. It allows you to perform various tasks such as retrieving, inserting, updating, and deleting data in a database. SQL is a standard language used by most database systems like MySQL, PostgreSQL, SQL Server, and Oracle.
+**SQL (Structured Query Language)** is a programming language used to manage and interact with databases. It allows you to perform various tasks such as retrieving, inserting, updating, and deleting data in a database. SQL is the standard language used by most database systems like MySQL, PostgreSQL, SQL Server, and Oracle.
 
 In simple terms:
 - SQL helps you communicate with the database to perform operations.
@@ -68,4 +69,4 @@ In this example:
 - `HireDate` is a date.
 
 ### Conclusion:
-SQL helps manage and query databases efficiently, and understanding data types is crucial for storing and organizing data correctly in a database.
+SQL helps manage and query databases efficiently, and understanding data types is crucial for storing and organising data correctly in a database.
