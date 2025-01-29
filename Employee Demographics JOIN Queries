@@ -1,54 +1,82 @@
-/* **********************************************************************************************
- * SQL Queries for Employee Demographics and Salary Details
- * Includes examples for INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN operations
- ********************************************************************************************** */
-
--- INNER JOIN: Retrieves only matching records from both tables
+/**********************************************************************************************
+   * SQL Queries for Employee Demographics and Salary Details
+   * Demonstrates INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN (simulated using UNION), and more
+ **********************************************************************************************/
+  -- INNER JOIN: Retrieves only matching records from both tables
 SELECT *
 FROM employee_demographics AS ed
 INNER JOIN employee_salary_details AS esd
 ON ed.Employee_ID = esd.Employee_ID;
 
--- SELECT specific columns using INNER JOIN
+  -- Example: SELECT specific columns using INNER JOIN
 SELECT ed.Employee_ID, First_Name, Job_Title, Salary
 FROM employee_demographics AS ed
 INNER JOIN employee_salary_details AS esd
 ON ed.Employee_ID = esd.Employee_ID;
 
--- LEFT JOIN: Retrieves all records from employee_demographics, with matching records from employee_salary_details
+  -- LEFT JOIN: Retrieves all records from employee_demographics, with matching records from employee_salary_details
+  -- (NULL values for non-matching rows in employee_salary_details)
 SELECT *
 FROM employee_demographics AS ed
 LEFT JOIN employee_salary_details AS esd
 ON ed.Employee_ID = esd.Employee_ID;
 
--- RIGHT JOIN: Retrieves all records from employee_salary_details, with matching records from employee_demographics
+ -- RIGHT JOIN: Retrieves all records from employee_salary_details, with matching records from employee_demographics
+ -- (NULL values for non-matching rows in employee_demographics)
 SELECT *
 FROM employee_demographics AS ed
 RIGHT JOIN employee_salary_details AS esd
 ON ed.Employee_ID = esd.Employee_ID;
 
--- FULL JOIN simulation using UNION (for databases that do not support FULL JOIN)
--- UNION: Combines results from multiple queries, removing duplicates.
+
+
+  -- FULL JOIN Simulation using UNION ALL (for databases that do not support FULL JOIN)
+  -- Combines all records from both tables, including non-matching rows from both sides
+  -- Note: UNION ALL is used to include duplicates (if any)
+
 SELECT *
 FROM employee_demographics AS ed
 LEFT JOIN employee_salary_details AS esd
 ON ed.Employee_ID = esd.Employee_ID
 
-UNION 
+UNION ALL 
 
 SELECT *
 FROM employee_demographics AS ed
 RIGHT JOIN employee_salary_details AS esd
 ON ed.Employee_ID = esd.Employee_ID;
 
--- FULL JOIN: Returns all rows from both tables, with NULL values for missing matches on either side.
--- Note: If FULL JOIN is supported, you can use the following query instead
--- SELECT * FROM employee_demographics AS ed
--- FULL JOIN employee_salary_details AS esd
--- ON ed.Employee_ID = esd.Employee_ID;
 
+  -- Simulate FULL JOIN using UNION
+  -- LEFT JOIN: Gets all rows from `employee_demographics` and matching rows from `employee_salary_details`.
+   - If no match, `employee_salary_details` columns will show NULL.
+  -- RIGHT JOIN: Gets all rows from `employee_salary_details` and matching rows from `employee_demographics`.
+   - If no match, `employee_demographics` columns will show NULL.
+  -- UNION: Combines both results and removes duplicates.
 
--- Filtering and Sorting with INNER JOIN
+SELECT *
+FROM employee_demographics AS ed
+LEFT JOIN employee_salary_details AS esd
+ON ed.Employee_ID = esd.Employee_ID
+
+UNION
+
+SELECT *
+FROM employee_demographics AS ed
+RIGHT JOIN employee_salary_details AS esd
+ON ed.Employee_ID = esd.Employee_ID;
+
+  -- FULL JOIN: Returns all rows from both tables, with NULL values for missing matches on either side.
+  -- Note: If FULL JOIN is supported, you can use the following query instead
+/*
+SELECT *
+FROM employee_demographics AS ed
+FULL JOIN employee_salary_details AS esd
+ON ed.Employee_ID = esd.Employee_ID;
+*/
+
+  -- Filtering and Sorting with INNER JOIN
+  -- Example: Retrieve employee details excluding a specific name and sort by salary in descending order.
 SELECT ed.Employee_ID, First_Name, Last_Name, Job_Title, Salary
 FROM employee_demographics AS ed
 INNER JOIN employee_salary_details AS esd
@@ -56,7 +84,8 @@ ON ed.Employee_ID = esd.Employee_ID
 WHERE First_Name <> 'Michael'
 ORDER BY Salary DESC;
 
--- Aggregation with INNER JOIN
+  -- Aggregation with INNER JOIN
+  -- Example: Calculate the average salary for a specific job title
 SELECT Job_Title, AVG(Salary) AS Average_Salary
 FROM employee_demographics AS ed
 INNER JOIN employee_salary_details AS esd
@@ -65,12 +94,17 @@ WHERE Job_Title = 'Salesman'
 GROUP BY Job_Title;
 
 
-
-Summary:
-- INNER JOIN: Returns only the rows that have matching values in both tables.
-- LEFT JOIN: Returns all rows from the left table, along with matching rows from the right table (and NULL for missing values from the right table).
-- RIGHT JOIN: Returns all rows from the right table, along with matching rows from the left table (and NULL for missing values from the left table).
-- UNION: Combines results from multiple queries, removing duplicates. Useful for simulating a FULL JOIN in databases that don’t support it.
-- FULL JOIN: Returns all rows from both tables, with NULL values for missing matches on either side. (Not supported in some databases like MySQL).
-
+/**********************************************************************************************
+ * Summary of Join Types:
+   * - INNER JOIN: Returns only the rows that have matching values in both tables.
+   * - LEFT JOIN: Returns all rows from the left table, along with matching rows from the right table (NULL for missing values from the right table).
+   * - RIGHT JOIN: Returns all rows from the right table, along with matching rows from the left table (NULL for missing values from the left table).
+   * - FULL JOIN: Returns all rows from both tables, with NULL values for missing matches on either side. (Simulated using UNION ALL if not supported by the database.)
+   * - UNION: Combines results from multiple queries, removing duplicates by default. Useful when merging datasets while ensuring unique rows.
+   * - UNION ALL: Combines results from multiple queries, including duplicates. Useful for simulating FULL JOIN in databases that don’t support it.
+  
+                                                  **Key Differences Between UNION and UNION ALL:**
+            - UNION: Combines results and removes duplicates.
+            - UNION ALL: Combines results and keeps duplicates.
+ **********************************************************************************************/
 
