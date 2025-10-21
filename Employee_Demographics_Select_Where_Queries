@@ -1,148 +1,165 @@
 /***********************************************************************************************
  - SQL Queries for Employee Demographics
- -  Includes examples for SELECT, WHERE clauses to filter based on First_Name and Age specific values
+ - Includes examples for SELECT and WHERE clauses to filter based on First_Name and Age values
  ***********************************************************************************************/
 
-  -- Query 1: Retrieve Employees with First Name 'Andy'
-  -- This query retrieves all columns for employees whose first name is 'Andy'
+-- ============================================
+-- Query 1: Retrieve Employees with First Name 'Andy'
+-- ============================================
+-- This query retrieves all columns for employees whose first name is 'Andy'
 SELECT *
 FROM employee_demographics
 WHERE First_Name = "Andy";
 
-***********************************************************************************************
-  -- Query 2: Retrieve Employees whose First Name is NOT 'Andy'
-  -- This query retrieves all columns for employees whose first name is NOT 'Andy'
+
+-- ============================================
+-- Query 2: Retrieve Employees whose First Name is NOT 'Andy'
+-- ============================================
+-- This query retrieves all columns for employees whose first name is NOT 'Andy'
 SELECT *
 FROM employee_demographics
 WHERE First_Name <> "Andy";
 
-***********************************************************************************************
-  -- Query 3: Retrieve Employees Older than 30
-  -- This query retrieves all columns for employees whose age is greater than 30
+
+-- ============================================
+-- Query 3: Retrieve Employees Older than 30
+-- ============================================
+-- This query retrieves all columns for employees whose age is greater than 30
 SELECT *
 FROM employee_demographics
 WHERE age > 30;
 
-***********************************************************************************************
-  -- Query 4: Retrieve Employees Aged 30 or Older
-  -- This query retrieves all columns for employees whose age is 30 or older
+
+-- ============================================
+-- Query 4: Retrieve Employees Aged 30 or Older
+-- ============================================
+-- This query retrieves all columns for employees whose age is 30 or older
 SELECT *
 FROM employee_demographics
 WHERE age >= 30;
 
-***********************************************************************************************
-  -- Query 5: Retrieve Employees Younger than 30
-  -- This query retrieves all columns for employees whose age is less than 30
+
+-- ============================================
+-- Query 5: Retrieve Employees Younger than 30
+-- ============================================
+-- This query retrieves all columns for employees whose age is less than 30
 SELECT *
 FROM employee_demographics
 WHERE age < 30;
 
-***********************************************************************************************
-  -- Query 6: Retrieve Employees Aged 30 or Younger
-  -- This query retrieves all columns for employees whose age is 30 or younger
+
+-- ============================================
+-- Query 6: Retrieve Employees Aged 30 or Younger
+-- ============================================
+-- This query retrieves all columns for employees whose age is 30 or younger
 SELECT *
 FROM employee_demographics
 WHERE age <= 30;
 
-***********************************************************************************************
-  -- Query 7: Retrieve Male Employees Aged 30 or Younger
-  -- This query retrieves all columns for male employees whose age is 30 or younger
+
+-- ============================================
+-- Query 7: Retrieve Male Employees Aged 30 or Younger
+-- ============================================
+-- This query retrieves all columns for male employees whose age is 30 or younger
 SELECT *
 FROM employee_demographics
 WHERE age <= 30 AND gender = 'male';
 
-***********************************************************************************************
-  -- Query 8: Retrieve Employees who are 30 or Younger, or Male
-  -- This query retrieves all columns for employees who are 30 or younger, or whose gender is male
+
+-- ============================================
+-- Query 8: Retrieve Employees who are 30 or Younger, or Male
+-- ============================================
+-- This query retrieves all columns for employees who are 30 or younger, or whose gender is male
 SELECT *
 FROM employee_demographics
 WHERE age <= 30 OR gender = 'male';
 
-***********************************************************************************************
-  -- Query 9: Retrieve Employees whose Last Name Starts with 'S'
-  -- This query retrieves all columns for employees whose last name starts with 'S'
+
+-- ============================================
+-- Query 9: Retrieve Employees whose Last Name Starts with 'S'
+-- ============================================
+-- This query retrieves all columns for employees whose last name starts with 'S'
 SELECT *
 FROM employee_demographics
 WHERE Last_Name LIKE 's%';
 
-***********************************************************************************************
-  -- Query 10: Retrieve Employees whose Age is between 25 and 40
-  -- This query retrieves all columns for employees whose age is between 25 and 40 (inclusive)
+
+-- ============================================
+-- Query 10: Retrieve Employees whose Age is between 25 and 40
+-- ============================================
+-- This query retrieves all columns for employees whose age is between 25 and 40 (inclusive)
 SELECT *
 FROM employee_demographics
 WHERE age BETWEEN 25 AND 40;
 
-***********************************************************************************************
-  -- Query 11: Retrieve Employees whose First Name is 'John' and Gender is 'Female'
-  -- This query retrieves all columns for employees whose first name is 'John' and gender is 'Female'
+
+-- ============================================
+-- Query 11: Retrieve Employees whose First Name is 'John' and Gender is 'Female'
+-- ============================================
+-- This query retrieves all columns for employees whose first name is 'John' and gender is 'Female'
 SELECT *
 FROM employee_demographics
 WHERE First_Name = 'John' AND gender = 'Female';
 
-***********************************************************************************************
-  -- Query 12: Retrieve Employees whose First Name is 'Jane' or Last Name is 'Doe'
-  -- This query retrieves all columns for employees whose first name is 'Jane' or last name is 'Doe'
+
+-- ============================================
+-- Query 12: Retrieve Employees whose First Name is 'Jane' or Last Name is 'Doe'
+-- ============================================
+-- This query retrieves all columns for employees whose first name is 'Jane' or last name is 'Doe'
 SELECT *
 FROM employee_demographics
 WHERE First_Name = 'Jane' OR Last_Name = 'Doe';
 
-***********************************************************************************************
-  -- Query 13: Retrieve Employees whose Age is Greater than 40 and Gender is 'Male'
-  -- This query retrieves all columns for male employees whose age is greater than 40
+
+-- ============================================
+-- Query 13: Retrieve Employees whose Age is Greater than 40 and Gender is 'Male'
+-- ============================================
+-- This query retrieves all columns for male employees whose age is greater than 40
 SELECT *
 FROM employee_demographics
 WHERE age > 40 AND gender = 'Male';
 
-***********************************************************************************************
-  -- Query 14: Retrieve Employees whose Last Name Ends with 'son'
-  -- This query retrieves all columns for employees whose last name ends with 'son'
+
+-- ============================================
+-- Query 14: Retrieve Employees whose Last Name Ends with 'son'
+-- ============================================
+-- This query retrieves all columns for employees whose last name ends with 'son'
 SELECT *
 FROM employee_demographics
 WHERE Last_Name LIKE '%son';
 
-***********************************************************************************************
-  -- Query 15: Retrieve Employees who do not have 'a' in their First Name
-  -- This query retrieves all columns for employees whose first name does not contain the letter 'a'
+
+-- ============================================
+-- Query 15: Retrieve Employees who do not have 'a' in their First Name
+-- ============================================
+-- This query retrieves all columns for employees whose first name does not contain the letter 'a'
 SELECT *
 FROM employee_demographics
 WHERE First_Name NOT LIKE '%a%';
 
-***********************************************************************************************
-  -- Query 16: Retrieve Employees with a Non-Null First Name
-  -- This query retrieves all columns for employees whose first name is not null
+
+-- ============================================
+-- Query 16: Retrieve Employees with a Non-Null First Name
+-- ============================================
+-- This query retrieves all columns for employees whose first name is not null
 SELECT *
 FROM employee_demographics
 WHERE First_Name IS NOT NULL;
 
-***********************************************************************************************
-  -- Query 17: Retrieve Employees with a Null First Name
-  -- This query retrieves all columns for employees whose first name is null
+
+-- ============================================
+-- Query 17: Retrieve Employees with a Null First Name
+-- ============================================
+-- This query retrieves all columns for employees whose first name is null
 SELECT *
 FROM employee_demographics
 WHERE First_Name IS NULL;
 
-***********************************************************************************************
-  -- Query 18: Retrieve Employees whose First Name is 'Jam' or 'Pam'
-  -- This query retrieves all columns for employees whose first name is either 'Jam' or 'Pam'
+
+-- ============================================
+-- Query 18: Retrieve Employees whose First Name is 'Jam' or 'Pam'
+-- ============================================
+-- This query retrieves all columns for employees whose first name is either 'Jam' or 'Pam'
 SELECT *
 FROM employee_demographics
 WHERE First_Name IN ('Jam', 'Pam');
-***********************************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
